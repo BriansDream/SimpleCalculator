@@ -33,7 +33,7 @@
     border-radius: 30px;
     text-align: center;
     width: 30%;
-    margin-top: 5px;
+    margin-top: 8px;
     cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     font-weight: bolder;
@@ -46,12 +46,11 @@ a {
 /* Akhir container title */
 
 /* Start container app */
-
-
 .calculator-app {
 
     flex-basis: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
 
 }
 
