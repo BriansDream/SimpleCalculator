@@ -1,60 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
-.container-display {
-    background-color: rgb(138, 138, 138);
-    display: flex;
-    justify-content: end;
-    font-size: 2em;
-    padding: 20px;
-}
 
-.display {
-    color: white;
-    font-size: 2em;
-
-
-}
-
+/* Container Calculator */
 .calculator {
-
-    width: fit-content;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
-}
-
-.row {
     display: flex;
-    font-size: 2em;
-
-    justify-content: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    justify-content: space-around;
     align-items: center;
+    margin-top: 20px;
+    padding: 10px;
 }
 
-.number {
-    padding: 50px;
+/* Start container title */
 
+.calculator .container-title h1 {
+    font-size: 2.3em;
 }
 
-
-
-.number {
-    flex-basis: 25%;
-    cursor: pointer;
-    text-align: center;
-}
-
-.equals {
+.container-title .cta {
     flex-basis: 50%;
+    padding: 10px;
+    background-color: rgb(241, 117, 117);
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    width: 30%;
+    margin-top: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-weight: bolder;
 }
 
-.operator,
-.negative,
-.equals {
-    background-color: rgb(255, 98, 98);
+a {
+    text-decoration: none;
+}
+
+/* Akhir container title */
+
+/* Start container app */
+
+
+.calculator-app {
+
+    flex-basis: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.display-result {
+    background-color: darkturquoise;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.display-result .result {
     color: white;
+    font-size: 2.3em;
+}
+
+.display-number {
+    display: flex;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.display-number .number {
+    flex-basis: 25%;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px;
+    font-weight: bolder;
+
+}
+
+.display-number .operator {
+    color: rgb(236, 119, 119);
+
+}
+
+.display-number .clear {
+    flex-basis: 50%;
+    color: rgb(236, 119, 119);
+
+}
+
+/* Last container app */
+
+/* Responsive breakpoint */
+@media screen and (max-width: 800px) {
+    .calculator {
+        flex-direction: column;
+    }
+
+    .container-title {
+        margin-bottom: 10px;
+        text-align: center;
+        padding: 10px
+    }
+
+    .container-app {
+        padding: 10px;
+    }
+
+    .container-title .cta {
+        width: 100%;
+    }
 }
