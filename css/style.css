@@ -95,6 +95,49 @@ a {
 
 /* Last container app */
 
+
+/* History */
+.CalculatorHistory {
+    display: flex;
+    align-items: center;
+    max-width: 1440px;
+    padding: 10px;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.history-title {
+    flex-basis: 50%;
+    padding: 10px;
+}
+
+table {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    flex-basis: 50%;
+    padding: 10px;
+}
+
+thead th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+.historyList tr:nth-child(even) {
+    background-color: rgb(255, 122, 122);
+    color: white;
+}
+
+
+
+
+
+
+
+
 /* Responsive breakpoint */
 @media screen and (max-width: 800px) {
     .calculator {

@@ -1,4 +1,5 @@
 
+
 // Object untuk menggambarkan data dan kondisi pada calculator
 const Calculator = {
     displayNumber: "0",
@@ -43,12 +44,12 @@ for (let button of buttons) {
             handleOperator(target.innerText);
             updateDisplay();
             return;
-
             }
 
             if(target.classList.contains('equals')) {
                 calculation();
                 updateDisplay();
+            
                 return;
             }
 
@@ -64,15 +65,11 @@ for (let button of buttons) {
                 // Digunakan agar fungsi dibawah tidak dijalankan
                 return;
             }
-
-
-            
-
-
-
             inputNumber(target.innerText);
             updateDisplay();
-            console.log(Calculator.displayNumber);
+
+          
+         
     })
  }
 
@@ -102,9 +99,31 @@ function inversNumber() {
 
 // Expression function
 const calculation = function() {
-    if(Calculator.operator == '+') {
-        Calculator.displayNumber = parseInt(Calculator.firstNumber) + parseInt(Calculator.displayNumber);
-    } else {
-        Calculator.displayNumber = parseInt(Calculator.firstNumber) - parseInt(Calculator.displayNumber);
+
+    if(Calculator.firstNumber == null || Calculator.operator == null) {
+        alert("You've not entered the operator")
+        return;
     }
+
+    let result = 0;
+    if(Calculator.operator == '+') {
+        result = parseInt(Calculator.firstNumber) + parseInt(Calculator.displayNumber);
+    } else {
+        result = parseInt(Calculator.firstNumber) - parseInt(Calculator.displayNumber);
+    }
+   
+    // variable baru untuk objek dari data history yang akan dikirimkan
+    const history = {
+        firstNumber: Calculator.firstNumber,
+        secondNumber: Calculator.displayNumber,
+        operator: Calculator.operator,
+        result: result
+    }
+    
+    putHistory(history);
+    renderHistory();
+    Calculator.displayNumber = result;
+ 
+    
 }
+
